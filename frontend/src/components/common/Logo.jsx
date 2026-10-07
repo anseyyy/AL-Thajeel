@@ -19,7 +19,7 @@ export default function Logo({ isFooter = false }) {
       >
         <path d="M13 2 L24 12 H20 V23 H15 V15 H11 V23 H6 V12 H2 Z" />
       </svg>
-      Al Dhiyafah
+      Al Thajeel
     </Link>
   );
 }
