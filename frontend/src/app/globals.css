@@ -1,0 +1,124 @@
+@import "tailwindcss";
+
+@theme {
+  --font-serif: var(--serif), Georgia, serif;
+  --font-sans: var(--sans), system-ui, -apple-system, sans-serif;
+  --radius-custom: 2px;
+  --color-gold: #C9A227;
+  --color-gold-ink: #1A1408;
+
+  --color-theme-bg: var(--bg);
+  --color-theme-panel: var(--panel);
+  --color-theme-ink: var(--ink);
+  --color-theme-sub: var(--sub);
+  --color-theme-accent: var(--accent);
+  --color-theme-accent-ink: var(--accent-ink);
+  --color-theme-line: var(--line);
+}
+
+:root {
+  box-sizing: border-box;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+  --radius: 2px;
+  --gold: #C9A227;
+  --gold-ink: #1A1408;
+
+  /* Default theme fallback (morning) */
+  --bg: #FBF3E7;
+  --panel: #F3E4D0;
+  --ink: #3A2E22;
+  --sub: #7A6552;
+  --accent: #C8763B;
+  --accent-ink: #FBF3E7;
+  --line: #E4D2B8;
+}
+
+html {
+  scroll-padding-top: env(safe-area-inset-top, 0px);
+  height: 100%;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100%;
+  font-family: var(--font-sans);
+  color: var(--ink);
+  background-color: var(--bg);
+  transition: background-color 0.8s ease, color 0.8s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+:root[data-theme="morning"] {
+  --bg: #FBF3E7;
+  --panel: #F3E4D0;
+  --ink: #3A2E22;
+  --sub: #7A6552;
+  --accent: #C8763B;
+  --accent-ink: #FBF3E7;
+  --line: #E4D2B8;
+}
+
+:root[data-theme="afternoon"] {
+  --bg: #F6FAFD;
+  --panel: #E9F2F8;
+  --ink: #182430;
+  --sub: #54687A;
+  --accent: #1D6FA5;
+  --accent-ink: #F6FAFD;
+  --line: #D3E4EE;
+}
+
+:root[data-theme="evening"] {
+  --bg: #2A1E2C;
+  --panel: #3A2A3C;
+  --ink: #F3E7E4;
+  --sub: #C9B3B8;
+  --accent: #E4674B;
+  --accent-ink: #2A1E2C;
+  --line: #4E3B4E;
+}
+
+:root[data-theme="night"] {
+  --bg: #0B0E16;
+  --panel: #141926;
+  --ink: #E7ECF5;
+  --sub: #8A93A8;
+  --accent: #7C93E0;
+  --accent-ink: #0B0E16;
+  --line: #232B3D;
+}
+
+@keyframes reveal {
+  0% {
+    transform: scale(0.4);
+    opacity: 0;
+  }
+  60% {
+    transform: scale(1.08);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
