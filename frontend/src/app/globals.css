@@ -49,9 +49,12 @@ body {
   font-family: var(--font-sans);
   color: var(--ink);
   background-color: var(--bg);
-  transition: background-color 0.8s ease, color 0.8s ease;
   display: flex;
   flex-direction: column;
+}
+
+body, header, footer, section, article, nav, div, p, h1, h2, h3, h4, span, a, input, textarea, button, svg {
+  transition: background-color 0.6s ease, border-color 0.6s ease, color 0.6s ease, fill 0.6s ease, stroke 0.6s ease;
 }
 
 main {

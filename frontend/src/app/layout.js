@@ -2,7 +2,7 @@ import { Fraunces, Public_Sans } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/fixed/Header";
 import Footer from "@/components/fixed/Footer";
-import ThemeWatcher from "@/components/common/ThemeWatcher";
+import TimeTheme from "@/components/common/TimeTheme";
 
 const fraunces = Fraunces({
   subsets: ["latin"],
@@ -35,15 +35,17 @@ export default function RootLayout({ children }) {
         <script
           dangerouslySetInnerHTML={{
             __html: `(function(){
-              var h = new Date().getHours();
-              var t = (h >= 5 && h < 12) ? 'morning' : (h >= 12 && h < 17) ? 'afternoon' : (h >= 17 && h < 20) ? 'evening' : 'night';
-              document.documentElement.setAttribute('data-theme', t);
+              try {
+                var h = new Date().getHours();
+                var t = (h >= 5 && h < 12) ? 'morning' : (h >= 12 && h < 17) ? 'afternoon' : (h >= 17 && h < 20) ? 'evening' : 'night';
+                document.documentElement.setAttribute('data-theme', t);
+              } catch (e) {}
             })()`,
           }}
         />
       </head>
       <body>
-        <ThemeWatcher />
+        <TimeTheme />
         <Header />
         <main>{children}</main>
         <Footer />
