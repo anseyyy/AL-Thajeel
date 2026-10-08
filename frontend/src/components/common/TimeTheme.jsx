@@ -4,26 +4,20 @@ import { useEffect } from "react";
 
 /**
  * Determines theme based on local browser time:
- * 05:00–11:59 → morning
- * 12:00–16:59 → afternoon
- * 17:00–19:59 → evening
- * 20:00–04:59 → night
+ * 06:00–17:59 (Day) → light
+ * 18:00–05:59 (Night) → dark
  *
  * @param {Date} date
- * @returns {"morning" | "afternoon" | "evening" | "night"}
+ * @returns {"light" | "dark"}
  */
 export function getTimeTheme(date = new Date()) {
   const hours = date.getHours();
-  if (hours >= 5 && hours < 12) {
-    return "morning";
+  // 6:00 AM to 5:59 PM is Day/Light mode
+  if (hours >= 6 && hours < 18) {
+    return "light";
   }
-  if (hours >= 12 && hours < 17) {
-    return "afternoon";
-  }
-  if (hours >= 17 && hours < 20) {
-    return "evening";
-  }
-  return "night";
+  // 6:00 PM to 5:59 AM is Night/Dark mode
+  return "dark";
 }
 
 export function applyTheme(theme) {

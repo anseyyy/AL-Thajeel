@@ -23,28 +23,30 @@ const reasons = [
 
 export default function WhyChooseUs() {
   return (
-    <section className="w-full bg-[var(--panel)] border-y border-[var(--line)] py-[clamp(3rem,7vw,5.5rem)] px-[clamp(1.2rem,4vw,3rem)]">
-      <div className="max-w-[1180px] mx-auto">
-        <SectionHead
-          title="Why buyers work with us"
-          description="Three things we do differently, in the order they usually matter."
-        />
-        <div className="grid grid-cols-[repeat(auto-fit,minmax(220px,1fr))] gap-8">
-          {reasons.map((item) => (
-            <div key={item.num} className="flex flex-col">
-              <div className="text-[var(--accent)] font-serif text-[1.6rem] mb-2 font-bold">
-                {item.num}
+    <div className="container-width container-padding-x mb-20">
+      <section className="bg-[var(--panel)] border-y border-[var(--line)] py-[clamp(3rem,7vw,5.5rem)]">
+        <div className="container-padding-x">
+          <SectionHead
+            title="Why buyers work with us"
+            description="Three things we do differently, in the order they usually matter."
+          />
+          <div className="grid grid-cols-[repeat(auto-fit,minmax(220px,1fr))] gap-8">
+            {reasons.map((item) => (
+              <div key={item.num} className="flex flex-col">
+                <div className="text-[var(--accent)] font-serif text-[1.6rem] mb-2 font-bold">
+                  {item.num}
+                </div>
+                <h4 className="font-serif text-[1.1rem] font-semibold mb-1.5 text-[var(--ink)]">
+                  {item.title}
+                </h4>
+                <p className="text-[var(--sub)] text-[0.92rem] leading-[1.55] m-0">
+                  {item.description}
+                </p>
               </div>
-              <h4 className="font-serif text-[1.1rem] font-semibold mb-1.5 text-[var(--ink)]">
-                {item.title}
-              </h4>
-              <p className="text-[var(--sub)] text-[0.92rem] leading-[1.55] m-0">
-                {item.description}
-              </p>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </div>
   );
 }

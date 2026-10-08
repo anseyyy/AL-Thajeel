@@ -1,0 +1,16 @@
+{
+  "name": "Al-Thajeel Real Estates",
+  "short_name": "Al-Thajeel",
+  "description": "UAE Properties & Real Estate",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#FBF3E7",
+  "theme_color": "#C9A227",
+  "icons": [
+    {
+      "src": "/images/logo/althajeellogo.webp",
+      "sizes": "192x192 512x512",
+      "type": "image/webp"
+    }
+  ]
+}

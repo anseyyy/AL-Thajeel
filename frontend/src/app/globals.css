@@ -61,7 +61,12 @@ main {
   flex: 1 0 auto;
 }
 
-:root[data-theme="morning"] {
+/* Light / Day Theme (Default) */
+:root,
+:root[data-theme="light"],
+:root[data-theme="day"],
+:root[data-theme="morning"],
+:root[data-theme="afternoon"] {
   --bg: #FBF3E7;
   --panel: #F3E4D0;
   --ink: #3A2E22;
@@ -71,43 +76,26 @@ main {
   --line: #E4D2B8;
 }
 
-:root[data-theme="afternoon"] {
-  --bg: #F6FAFD;
-  --panel: #E9F2F8;
-  --ink: #182430;
-  --sub: #54687A;
-  --accent: #1D6FA5;
-  --accent-ink: #F6FAFD;
-  --line: #D3E4EE;
-}
-
+/* Dark / Night Theme */
+:root[data-theme="dark"],
+:root[data-theme="night"],
 :root[data-theme="evening"] {
-  --bg: #2A1E2C;
-  --panel: #3A2A3C;
-  --ink: #F3E7E4;
-  --sub: #C9B3B8;
-  --accent: #E4674B;
-  --accent-ink: #2A1E2C;
-  --line: #4E3B4E;
-}
-
-:root[data-theme="night"] {
   --bg: #0B0E16;
   --panel: #141926;
   --ink: #E7ECF5;
   --sub: #8A93A8;
-  --accent: #7C93E0;
+  --accent: #C9A227;
   --accent-ink: #0B0E16;
   --line: #232B3D;
 }
 
 @keyframes reveal {
   0% {
-    transform: scale(0.4);
+    transform: scale(0.9);
     opacity: 0;
   }
   60% {
-    transform: scale(1.08);
+    transform: scale(1.6);
     opacity: 1;
   }
   100% {
@@ -124,4 +112,70 @@ main {
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+
+@keyframes logoReveal {
+  0% {
+    opacity: 0;
+    transform: scale(0.9);
+    animation-timing-function: cubic-bezier(0.16, 0.84, 0.44, 1); /* ease-out in */
+  }
+  25% {
+    opacity: 1;
+    transform: scale(1);
+    animation-timing-function: linear; /* hold */
+  }
+  70% {
+    opacity: 1;
+    transform: scale(1);
+    animation-timing-function: cubic-bezier(0.4, 0, 1, 1); /* ease-in out */
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.05);
+  }
+}
+
+
+@utility container-padding-x {
+  padding-left: 20px;
+  padding-right: 20px;
+
+  @media (min-width: 640px) {
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+  @media (min-width: 768px) {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+  @media (min-width: 1024px) {
+    padding-left: 60px;
+    padding-right: 60px;
+  }
+  @media (min-width: 1280px) {
+    padding-left: 95px;
+    padding-right: 95px;
+  }
+  @media (min-width: 1536px) {
+    padding-left: 100px;
+    padding-right: 100px;
+  }
+}
+
+@utility container-width {
+  width: 100%;
+  max-width: 1500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.scrollbar-none {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
 }

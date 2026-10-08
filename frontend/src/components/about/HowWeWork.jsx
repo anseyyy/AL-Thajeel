@@ -23,8 +23,8 @@ const principles = [
 
 export default function HowWeWork() {
   return (
-    <section className="w-full bg-[var(--panel)] border-y border-[var(--line)] py-[clamp(3rem,7vw,5.5rem)] px-[clamp(1.2rem,4vw,3rem)]">
-      <div className="max-w-[1180px] mx-auto">
+    <section className="w-full bg-[var(--panel)] border-y border-[var(--line)] py-[clamp(3rem,7vw,5.5rem)]">
+      <div className="container-width container-padding-x">
         <SectionHead title="How we work" />
         <div className="grid grid-cols-[repeat(auto-fit,minmax(220px,1fr))] gap-8">
           {principles.map((item) => (

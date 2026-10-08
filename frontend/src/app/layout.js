@@ -19,10 +19,23 @@ const publicSans = Public_Sans({
 });
 
 export const metadata = {
-  title: "Al Dhiyafah Properties — UAE Real Estate",
+  title: "Al-Thajeel Real Estates  UAE Properties",
   description:
-    "Villas, flats, kiosks and warehouses across Dubai, Abu Dhabi and Sharjah — handled by a team that actually answers the phone.",
+    "Villas, houses, flats, offices, shops and staff accommodations across Dubai, Abu Dhabi and Sharjah.",
+  icons: {
+    icon: [
+      { url: "/images/logo/althajeellogo.webp" },
+      { url: "/favicon.ico" },
+    ],
+    shortcut: ["/images/logo/althajeellogo.webp"],
+    apple: [
+      { url: "/images/logo/althajeellogo.webp" },
+    ],
+  },
 };
+
+import { AuthProvider } from "@/context/AuthContext";
+import { ToastProvider } from "@/context/ToastContext";
 
 export default function RootLayout({ children }) {
   return (
@@ -37,7 +50,7 @@ export default function RootLayout({ children }) {
             __html: `(function(){
               try {
                 var h = new Date().getHours();
-                var t = (h >= 5 && h < 12) ? 'morning' : (h >= 12 && h < 17) ? 'afternoon' : (h >= 17 && h < 20) ? 'evening' : 'night';
+                var t = (h >= 6 && h < 18) ? 'light' : 'dark';
                 document.documentElement.setAttribute('data-theme', t);
               } catch (e) {}
             })()`,
@@ -45,10 +58,14 @@ export default function RootLayout({ children }) {
         />
       </head>
       <body>
-        <TimeTheme />
-        <Header />
-        <main>{children}</main>
-        <Footer />
+        <ToastProvider>
+          <AuthProvider>
+            <TimeTheme />
+            <Header />
+            <main>{children}</main>
+            <Footer />
+          </AuthProvider>
+        </ToastProvider>
       </body>
     </html>
   );

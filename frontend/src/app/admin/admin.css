@@ -1,0 +1,101 @@
+/* ==========================================================================
+   AL THAJEEL ADMIN DESIGN SYSTEM
+   Strictly scoped to the admin dashboard (.admin-shell)
+   ========================================================================== */
+
+.admin-shell {
+  /* 4 Primary Foundation Colors */
+  --admin-primary: #3368A0;
+  --admin-secondary: #66A3BF;
+  --admin-surface: #C8DFDB;
+  --admin-background: #F2EFE7;
+
+  /* Supporting UI Tokens */
+  --admin-white: #FFFFFF;
+  --admin-text: #18324A;
+  --admin-text-muted: #60788A;
+
+  --admin-border: rgba(51, 104, 160, 0.16);
+  --admin-border-input: rgba(51, 104, 160, 0.22);
+  --admin-shadow: 0 10px 30px rgba(51, 104, 160, 0.10);
+  --admin-shadow-sm: 0 4px 14px rgba(51, 104, 160, 0.06);
+  --admin-shadow-lg: 0 20px 50px rgba(51, 104, 160, 0.18);
+
+  --admin-radius-sm: 8px;
+  --admin-radius-md: 12px;
+  --admin-radius-lg: 18px;
+  --admin-radius-xl: 24px;
+
+  /* Spacing Tokens */
+  --admin-space-xs: 4px;
+  --admin-space-sm: 8px;
+  --admin-space-md: 16px;
+  --admin-space-lg: 24px;
+  --admin-space-xl: 32px;
+  --admin-space-2xl: 48px;
+
+  /* Typography */
+  font-family: var(--font-sans);
+  color: var(--admin-text);
+  background-color: var(--admin-background);
+  min-height: 100vh;
+}
+
+/* Base utility helpers for admin */
+.admin-shell .admin-card {
+  background: var(--admin-white);
+  border: 1px solid var(--admin-border);
+  box-shadow: var(--admin-shadow);
+  border-radius: var(--admin-radius-lg);
+}
+
+.admin-shell .admin-btn-primary {
+  background-color: var(--admin-primary);
+  color: var(--admin-white);
+  border-radius: var(--admin-radius-md);
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.admin-shell .admin-btn-primary:hover:not(:disabled) {
+  background-color: #285781;
+}
+
+.admin-shell .admin-btn-secondary {
+  background-color: var(--admin-secondary);
+  color: var(--admin-white);
+  border-radius: var(--admin-radius-md);
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.admin-shell .admin-btn-secondary:hover:not(:disabled) {
+  background-color: #5593AF;
+}
+
+.admin-shell .admin-btn-outline {
+  background-color: transparent;
+  border: 1px solid var(--admin-primary);
+  color: var(--admin-primary);
+  border-radius: var(--admin-radius-md);
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.admin-shell .admin-btn-outline:hover:not(:disabled) {
+  background-color: var(--admin-surface);
+}
+
+.admin-shell .admin-input {
+  background-color: var(--admin-white);
+  border: 1px solid var(--admin-border-input);
+  border-radius: var(--admin-radius-md);
+  color: var(--admin-text);
+  transition: all 0.2s ease;
+}
+
+.admin-shell .admin-input:focus {
+  outline: none;
+  border-color: var(--admin-secondary);
+  box-shadow: 0 0 0 3px rgba(102, 163, 191, 0.18);
+}
