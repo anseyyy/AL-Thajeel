@@ -23,8 +23,8 @@ const reasons = [
 
 export default function WhyChooseUs() {
   return (
-    <div className="container-width container-padding-x mb-20">
-      <section className="bg-[var(--panel)] border-y border-[var(--line)] py-[clamp(3rem,7vw,5.5rem)]">
+    <div className="container-width container-padding-x mt-10  mb-20">
+      <section className=" bg-[var(--panel)] py-[clamp(3rem,7vw,5.5rem)]">
         <div className="container-padding-x">
           <SectionHead
             title="Why buyers work with us"

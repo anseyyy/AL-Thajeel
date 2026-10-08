@@ -126,7 +126,7 @@ export default function Testimonials() {
 
   return (
     <section
-      className="py-15 bg-[var(--bg)] border-b border-[var(--line)] transition-colors duration-500 overflow-hidden"
+      className="py-15 bg-[var(--bg)] transition-colors duration-500 overflow-hidden"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
     >
